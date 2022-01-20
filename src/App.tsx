@@ -4,7 +4,7 @@ import DB from './obras';
 import { Obra } from './types/Obra';
 import { ListaObra } from './components/Listaobra/index';
 import { AddObra } from './components/AddObra'
-import Alert from '@mui/material/Alert';
+
 
 const App = () => {
 
@@ -23,7 +23,7 @@ const App = () => {
         estado: estado,
       });
       setObras(newObra);
-    }else  alert("valores nao podem estar vazio")
+    } else alert("Valores não podem estar vazio")
   }
   function handleDelete(index: any) {
     let newObra = [...obras];
