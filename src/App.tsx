@@ -4,6 +4,7 @@ import DB from './obras';
 import { Obra } from './types/Obra';
 import { ListaObra } from './components/Listaobra/index';
 import { AddObra } from './components/AddObra'
+import Alert from '@mui/material/Alert';
 
 const App = () => {
 
@@ -14,7 +15,7 @@ const App = () => {
 
   function handleAddObra(id: number, obraNome: string, cidade: string, estado: string) {
     let newObra = [...obras];
-    if (obraNome !== '' || cidade !== '' || estado !== '') {
+    if (obraNome !== '' && cidade !== '' && estado !== '') {
       newObra.push({
         id,
         obraNome: obraNome,
@@ -22,7 +23,7 @@ const App = () => {
         estado: estado,
       });
       setObras(newObra);
-    }else  {alert("Valores nao podem estar vazio")}
+    }else  alert("valores nao podem estar vazio")
   }
   function handleDelete(index: any) {
     let newObra = [...obras];
